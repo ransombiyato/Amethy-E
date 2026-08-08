@@ -88,11 +88,9 @@ public class MainMenuFragment extends Fragment {
         mShareLogsButton.setOnClickListener((v) -> shareLog(requireContext()));
 
         mOpenDirectoryButton.setOnClickListener((v)-> {
-        mOpenDirectoryButton.setOnClickListener((v)-> {
             openPath(v.getContext(), getCurrentProfileDirectory(), false);
         });
 
-        });
 
 
         mNewsButton.setOnLongClickListener((v)->{
