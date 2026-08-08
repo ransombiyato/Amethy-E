@@ -1,0 +1,973 @@
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyDownloadTask.java:14:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyDownloadTask.java:15:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyDownloadTask.java:112:        String LWJGL3ifyProfileID = LWJGL3ifyUtils.getProfileID(modJar);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyDownloadTask.java:114:        MinecraftProfile profile = LWJGL3ifyUtils.createProfile(LWJGL3ifyProfileID, mLWJGL3ifyMod.versionName, mLWJGL3ifyMod.iconUrl);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyDownloadTask.java:115:        new MinecraftDownloader().start(mActivity, LWJGL3ifyUtils.installJson(modJar), LWJGL3ifyProfileID, this);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyDownloadTask.java:116:        LWJGL3ifyUtils.createInstance(profile, modJar, mLWJGL3ifyMod.versionName);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyDownloadTask.java:117:        tryDownloadDeps(new File(Tools.DIR_GAME_HOME, profile.gameDir+"/mods"));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyDownloadTask.java:119:        LauncherProfiles.load();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyDownloadTask.java:120:        LauncherProfiles.insertMinecraftProfile(profile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyDownloadTask.java:121:        LauncherProfiles.write();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/ForgeUtils.java:56:    public static void addAutoInstallArgs(Intent intent, File modInstallerJar, boolean createProfile) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/ForgeUtils.java:58:                + (createProfile ? "=NPS" : "") + // No Profile Suppression
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/ForgeVersionListHandler.java:24:    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/ForgeVersionListHandler.java:29:    public void endElement(String uri, String localName, String qName) throws SAXException {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:10:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:11:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:24:    private final boolean mCreateProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:25:    public FabriclikeDownloadTask(ModloaderDownloadListener modloaderDownloadListener, FabriclikeUtils utils, String mGameVersion, String mLoaderVersion, boolean mCreateProfile) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:30:        this.mCreateProfile = mCreateProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:59:        if(mCreateProfile) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:60:            LauncherProfiles.load();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:61:            MinecraftProfile fabricProfile = new MinecraftProfile();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:62:            fabricProfile.lastVersionId = versionId;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:63:            fabricProfile.name = mUtils.getName();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:64:            fabricProfile.icon = mUtils.getIconName();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:65:            LauncherProfiles.insertMinecraftProfile(fabricProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeDownloadTask.java:66:            LauncherProfiles.write();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:21:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:152:        String profileID = getProfileID(modJar);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:153:        String jsonPath = getJsonPath(profileID);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:163:            version.id = profileID;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:168:            throw new IOException("Failed to install "+profileID+" json file.");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:173:    public static String getJsonPath(String profileID) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:174:        return Tools.DIR_HOME_VERSION + "/" + profileID + "/" + profileID + ".json";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:178:    public static String getProfileID(File modJar) throws IOException {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:193:    public static void createInstance(MinecraftProfile profile, File modJar, String versionName) throws IOException {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:194:        File modsDir = new File(Tools.DIR_GAME_HOME, profile.gameDir+"/mods");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:218:    public static MinecraftProfile createProfile(String profileID, String versionName, String iconUrl) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:219:        MinecraftProfile LWJGL3ifyProfile = new MinecraftProfile();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:220:        LWJGL3ifyProfile.lastVersionId = profileID;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:221:        LWJGL3ifyProfile.name = "LWJGL3ify - "+ versionName;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:222:        LWJGL3ifyProfile.gameDir = String.format("./custom_instances/LWJGL3ify_%s", versionName);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:223:        LWJGL3ifyProfile.icon = tryDownloadIcon(iconUrl);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/LWJGL3ifyUtils.java:224:        return LWJGL3ifyProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/OptiFineUtils.java:26:                + "=OFNPS" +// No Profile Suppression
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:14:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:15:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:81:    private void createProfile(String btaVersionId) throws IOException {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:82:        LauncherProfiles.load();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:83:        MinecraftProfile btaProfile = new MinecraftProfile();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:84:        btaProfile.lastVersionId = btaVersionId;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:85:        btaProfile.name = "Better than Adventure!";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:87:        btaProfile.gameDir = "./custom_instances/better_than_adventure";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:88:        btaProfile.icon = tryDownloadIcon();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:89:        LauncherProfiles.insertMinecraftProfile(btaProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:90:        LauncherProfiles.write();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/BTADownloadTask.java:97:        createProfile(btaVersionId);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/FabriclikeUtils.java:24:    private static final String JSON_DOWNLOAD_URL = "%s/versions/loader/%s/%s/profile/json";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModLoader.java:6:import net.kdt.pojavlaunch.JavaGUILauncherActivity;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModLoader.java:81:        Intent baseIntent = new Intent(context, JavaGUILauncherActivity.class);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:15:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:16:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:24:import java.util.Locale;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:33:        String modpackName = (modDetail.title.toLowerCase(Locale.ROOT) + " " + modDetail.versionNames[selectedVersion])
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:69:        MinecraftProfile profile = new MinecraftProfile();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:70:        profile.gameDir = "./custom_instances/" + modpackName;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:71:        profile.name = modDetail.title;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:72:        profile.lastVersionId = modLoaderInfo.getVersionId();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:73:        profile.icon = ModIconCache.getBase64Image(modDetail.getIconCacheTag());
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:76:        LauncherProfiles.mainProfileJson.profiles.put(modpackName, profile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:77:        LauncherProfiles.write();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:138:            String readMB = fileSize > 0 ? String.format(Locale.US, "%.2f", readSize / (1024.0 * 1024.0)) : "unknown";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:139:            String totalMB = fileSize > 0 ? String.format(Locale.US, "%.2f",fileSize / (1024.0 * 1024.0)) : "unknown";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:150:        String profileFolderName = String.join(" ", modpackName, modpackVersion, "for", modpackMcVersion, hash);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:151:        profileFolderName = profileFolderName.trim().replaceAll("[\\\\/:*?\"<>| \\t\\n]", "_");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:154:        ModLoader modLoaderInfo = installFunction.installModpack(modpackFile, new File(Tools.DIR_GAME_HOME, "custom_instances/"+profileFolderName));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:158:        MinecraftProfile profile = MinecraftProfile.getDefaultProfile();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:159:        profile.gameDir = "./custom_instances/" + profileFolderName;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:160:        profile.name = modpackName;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:161:        if (!modpackMcVersion.isBlank()) profile.lastVersionId = modpackMcVersion;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:163:            profile.lastVersionId = modLoaderInfo.getVersionId();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:164:        LauncherProfiles.mainProfileJson.profiles.put(profileFolderName, profile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModpackInstaller.java:165:        LauncherProfiles.write();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/NotificationDownloadListener.java:44:    private void sendIntentNotification(int localeString) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/NotificationDownloadListener.java:47:                localeString,
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/NotificationDownloadListener.java:54:    private void sendEmptyNotification(int localeString) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/NotificationDownloadListener.java:57:                localeString,
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModDownloader.java:19:    private static final ThreadLocal<byte[]> sThreadLocalBuffer = new ThreadLocal<>();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModDownloader.java:70:    private static byte[] getThreadLocalBuffer() {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModDownloader.java:71:        byte[] buffer = sThreadLocalBuffer.get();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModDownloader.java:74:        sThreadLocalBuffer.set(buffer);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/api/ModDownloader.java:141:                    DownloadUtils.downloadFileMonitored(sourceUrl, mDestination, getThreadLocalBuffer(), this);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/modloaders/modpacks/imagecache/ModIconCache.java:100:                // reencode to png? who cares! our profile icon cache is an omnivore!
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/mirrors/DownloadMirror.java:89:        } catch (IOException ignored) { // If error happens, fallback to old file counter instead of size. This shouldn't really happen unless offline though.
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:1:package net.kdt.pojavlaunch.profiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:15:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:16:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:27: * Adapter for listing launcher profiles in a Spinner
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:29:public class ProfileAdapter extends BaseAdapter {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:30:    private Map<String, MinecraftProfile> mProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:31:    private final MinecraftProfile dummy = new MinecraftProfile();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:32:    private List<String> mProfileList;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:33:    private ProfileAdapterExtra[] mExtraEntires;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:35:    public ProfileAdapter(ProfileAdapterExtra[] extraEntries) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:36:        reloadProfiles(extraEntries);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:39:     * Gets how much profiles are loaded in the adapter right now
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:40:     * @returns loaded profile count
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:44:        return mProfileList.size() + mExtraEntires.length;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:47:     * Gets the profile at a given index
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:49:     * @returns MinecraftProfile name or null
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:53:        int profileListSize = mProfileList.size();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:54:        int extraPosition = position - profileListSize;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:55:        if(position < profileListSize){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:56:            String profileName = mProfileList.get(position);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:57:            if(mProfiles.containsKey(profileName)) return profileName;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:66:    public int resolveProfileIndex(String name) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:67:        return mProfileList.indexOf(name);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:77:        mProfiles = new HashMap<>(LauncherProfiles.mainProfileJson.profiles);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:78:        mProfileList = new ArrayList<>(Arrays.asList(mProfiles.keySet().toArray(new String[0])));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:85:        if (v == null) v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_version_profile_layout,parent,false);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:90:    public void setViewProfile(View v, String nm, boolean displaySelection) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:93:        MinecraftProfile minecraftProfile = mProfiles.get(nm);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:94:        if(minecraftProfile == null) minecraftProfile = dummy;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:95:        Drawable cachedIcon = ProfileIconCache.fetchIcon(v.getResources(), nm, minecraftProfile.icon);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:98:        // Historically, the profile name "New" was hardcoded as the default profile name
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:100:        String profileName = (Tools.isValidString(minecraftProfile.name) && !"New".equalsIgnoreCase(minecraftProfile.name)) ? minecraftProfile.name : null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:101:        String versionName = minecraftProfile.lastVersionId;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:103:        if (MinecraftProfile.LATEST_RELEASE.equalsIgnoreCase(versionName))
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:104:            versionName = v.getContext().getString(R.string.profiles_latest_release);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:105:        else if (MinecraftProfile.LATEST_SNAPSHOT.equalsIgnoreCase(versionName))
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:106:            versionName = v.getContext().getString(R.string.profiles_latest_snapshot);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:108:        if (versionName == null && profileName != null)
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:109:            extendedTextView.setText(profileName);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:110:        else if (versionName != null && profileName == null)
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:112:        else extendedTextView.setText(String.format("%s - %s", profileName, versionName));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:116:            String selectedProfile = LauncherPreferences.DEFAULT_PREF.getString(LauncherPreferences.PREF_KEY_CURRENT_PROFILE,"");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:117:            extendedTextView.setBackgroundColor(selectedProfile.equals(nm) ? ColorUtils.setAlphaComponent(Color.WHITE,60) : Color.TRANSPARENT);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:121:    public void setViewExtra(View v, ProfileAdapterExtra extra) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:130:            setViewProfile(v, (String) object, displaySelection);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:131:        }else if(object instanceof ProfileAdapterExtra) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:132:            setViewExtra(v, (ProfileAdapterExtra) object);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:136:    /** Reload profiles from the file */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:137:    public void reloadProfiles(){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:138:        LauncherProfiles.load();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:139:        mProfiles = new HashMap<>(LauncherProfiles.mainProfileJson.profiles);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:140:        mProfileList = new ArrayList<>(Arrays.asList(mProfiles.keySet().toArray(new String[0])));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:144:    /** Reload profiles from the file, with additional extra entries */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:145:    public void reloadProfiles(ProfileAdapterExtra[] extraEntries) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:146:        if(extraEntries == null) mExtraEntires = new ProfileAdapterExtra[0];
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapter.java:148:        this.reloadProfiles();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/VersionSelectorDialog.java:1:package net.kdt.pojavlaunch.profiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/VersionListAdapter.java:1:package net.kdt.pojavlaunch.profiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileIconCache.java:1:package net.kdt.pojavlaunch.profiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileIconCache.java:20:public class ProfileIconCache {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileIconCache.java:30:     * @param key the profile key
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileIconCache.java:31:     * @param icon the profile icon data (stored in the icon field of MinecraftProfile)
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileIconCache.java:44:     * @param key the profile key
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapterExtra.java:1:package net.kdt.pojavlaunch.profiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapterExtra.java:5:public class ProfileAdapterExtra {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/ProfileAdapterExtra.java:10:    public ProfileAdapterExtra(int id, int name, Drawable icon) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/profiles/VersionSelectorListener.java:1:package net.kdt.pojavlaunch.profiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/PresentedException.java:1:package net.kdt.pojavlaunch.authenticator.microsoft;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/PresentedException.java:6:    final int localizationStringId;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/PresentedException.java:9:    public PresentedException(int localizationStringId, Object... extraArgs) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/PresentedException.java:10:        this.localizationStringId = localizationStringId;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/PresentedException.java:14:    public PresentedException(Throwable throwable, int localizationStringId, Object... extraArgs) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/PresentedException.java:16:        this.localizationStringId = localizationStringId;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/PresentedException.java:21:        return context.getString(localizationStringId, extraArgs);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:1:package net.kdt.pojavlaunch.authenticator.microsoft;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:19:import net.kdt.pojavlaunch.value.MinecraftAccount;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:36:/** Allow to perform a background login on a given account */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:38:public class MicrosoftBackgroundLogin {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:39:    private static final String authTokenUrl = "https://login.live.com/oauth20_token.srf";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:40:    private static final String xblAuthUrl = "https://user.auth.xboxlive.com/user/authenticate";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:41:    private static final String xstsAuthUrl = "https://xsts.auth.xboxlive.com/xsts/authorize";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:42:    private static final String mcLoginUrl = "https://api.minecraftservices.com/authentication/login_with_xbox";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:43:    private static final String mcProfileUrl = "https://api.minecraftservices.com/minecraft/profile";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:51:        XSTS_ERRORS.put(2148916233L, R.string.xerr_no_account);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:58:    /* Fields used to fill the account  */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:63:    public boolean doesOwnGame, hasProfile = false;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:66:    public MicrosoftBackgroundLogin(boolean isRefresh, String authCode){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:71:    /** Performs a full login, calling back listeners appropriately  */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:72:    public void performLogin(@Nullable final ProgressListener progressListener,
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:80:                String xboxLiveToken = acquireXBLToken(accessToken);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:82:                String[] xsts = acquireXsts(xboxLiveToken);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:86:                checkMcProfile(mcToken);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:89:                if (!hasProfile && doesOwnGame) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:92:                    mcName = "Demo.Player";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:97:                MinecraftAccount acc = MinecraftAccount.load(mcName);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:98:                if(acc == null) acc = new MinecraftAccount();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:103:                acc.profileId = mcUuid;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:104:                acc.isMicrosoft = true;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:111:                    MinecraftAccount finalAcc = acc;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:112:                    Tools.runOnUiThread(() -> doneListener.onLoginDone(finalAcc));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:118:                    Tools.runOnUiThread(() -> errorListener.onLoginError(e));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:120:            ProgressLayout.clearProgress(ProgressLayout.AUTHENTICATE_MICROSOFT);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:126:        Log.i("MicrosoftLogin", "isRefresh=" + isRefresh + ", authCode= "+authcode);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:132:                "redirect_url", "https://login.live.com/oauth20_desktop.srf",
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:133:                "scope", "service::user.auth.xboxlive.com::MBI_SSL"
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:155:            Log.i("MicrosoftLogin","Acess Token = " + jo.getString("access_token"));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:169:        properties.put("SiteName", "user.auth.xboxlive.com");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:172:        data.put("RelyingParty", "http://auth.xboxlive.com");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:186:            Log.i("MicrosoftLogin","Xbl Token = "+jo.getString("Token"));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:222:            Log.i("MicrosoftLogin","Xbl Xsts = " + token + "; Uhs = " + uhs);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:229:            Integer locale_id = XSTS_ERRORS.get(xerr);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:230:            if(locale_id != null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:231:                throw new PresentedException(new RuntimeException(responseContents), locale_id);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:240:        URL url = new URL(mcLoginUrl);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:258:            Log.i("MicrosoftLogin","MC token: "+jo.getString("access_token"));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:260:            //checkMcProfile(jo.getString("access_token"));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:268:        // We only need to do this if user does not have a profile/username yet
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:269:        if (hasProfile) return;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:324:            Log.w("MicrosoftLogin", "Either the Auth API was changed or this account does not own Minecraft! Assuming the latter.");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:330:    private void checkMcProfile(String mcAccessToken) throws IOException, JSONException {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:331:        URL url = new URL(mcProfileUrl);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:344:                Log.i("MicrosoftLogin","profile:" + s);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:352:                hasProfile = true;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:353:                Log.i("MicrosoftLogin","UserName = " + name);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:354:                Log.i("MicrosoftLogin","Uuid Minecraft = " + uuidDashes);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:359:                Log.i("MicrosoftLogin","It seems that this Microsoft Account does not have a Minecraft profile, checking for ownership.");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:360:                hasProfile = false;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:363:                Log.e("MicrosoftLogin", "You screwed up the auth code somewhere");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:376:            Tools.runOnUiThread(() -> listener.onLoginProgress(step));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:378:        ProgressLayout.setProgress(ProgressLayout.AUTHENTICATE_MICROSOFT, step*20);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:391:            Log.e("MicrosoftAuth", e.toString());
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:414:        Log.i("MicrosoftLogin", "Error code: " + conn.getResponseCode() + ": " + conn.getResponseMessage());
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/microsoft/MicrosoftBackgroundLogin.java:416:            return new PresentedException(R.string.microsoft_login_retry_later);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/listener/ErrorListener.java:5:    void onLoginError(Throwable errorMessage);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/listener/DoneListener.java:3:import net.kdt.pojavlaunch.value.MinecraftAccount;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/listener/DoneListener.java:5:/** Called when the login is done and the account received. guaranteed to be on the UI Thread */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/listener/DoneListener.java:7:    void onLoginDone(MinecraftAccount account);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/authenticator/listener/ProgressListener.java:6:    void onLoginProgress(int step);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileTypeSelectFragment.java:13:public class ProfileTypeSelectFragment extends Fragment {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileTypeSelectFragment.java:14:    public static final String TAG = "ProfileTypeSelectFragment";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileTypeSelectFragment.java:16:    public ProfileTypeSelectFragment() {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileTypeSelectFragment.java:17:        super(R.layout.fragment_profile_type);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileTypeSelectFragment.java:24:        view.findViewById(R.id.vanilla_profile).setOnClickListener(v ->
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileTypeSelectFragment.java:25:                Tools.swapFragment(requireActivity(), ProfileEditorFragment.class,
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileTypeSelectFragment.java:26:                        ProfileEditorFragment.TAG, new Bundle(1)));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileTypeSelectFragment.java:28:        view.findViewById(R.id.modded_profile_fabric).setOnClickListener(v ->
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileTypeSelectFragment.java:32:        view.findViewById(R.id.modded_profile_forge).setOnClickListener(v ->
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ForgeInstallFragment.java:10:import net.kdt.pojavlaunch.JavaGUILauncherActivity;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ForgeInstallFragment.java:60:        Intent modInstallerStartIntent = new Intent(context, JavaGUILauncherActivity.class);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/LocalLoginFragment.java:22:public class LocalLoginFragment extends Fragment {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/LocalLoginFragment.java:23:    public static final String TAG = "LOCAL_LOGIN_FRAGMENT";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/LocalLoginFragment.java:28:    public LocalLoginFragment(){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/LocalLoginFragment.java:29:        super(R.layout.fragment_local_login);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/LocalLoginFragment.java:36://         if (!hasOnlineProfile()){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/LocalLoginFragment.java:39:        mUsernameEditText = view.findViewById(R.id.login_edit_email);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/LocalLoginFragment.java:40:        view.findViewById(R.id.login_button).setOnClickListener(v -> {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/LocalLoginFragment.java:43:                Tools.dialog(context, context.getString(R.string.local_login_bad_username_title), context.getString(R.string.local_login_bad_username_text));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/LocalLoginFragment.java:47:            ExtraCore.setValue(ExtraConstants.MOJANG_LOGIN_TODO, new String[]{
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/LocalLoginFragment.java:65:                || new File(Tools.DIR_ACCOUNT_NEW + "/" + text + ".json").exists()
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/NeoForgeInstallFragment.java:15:import net.kdt.pojavlaunch.JavaGUILauncherActivity;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/NeoForgeInstallFragment.java:109:        Intent modInstallerStartIntent = new Intent(context, JavaGUILauncherActivity.class);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:5:import static net.kdt.pojavlaunch.Tools.hasNoOnlineProfileDialog;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:6:import static net.kdt.pojavlaunch.Tools.hasOnlineProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:34:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:35:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:54:        Button mInstallJarButton = view.findViewById(R.id.install_jar_button);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:58:        ImageButton mEditProfileButton = view.findViewById(R.id.edit_profile_button);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:66:            mInstallJarButton.setOnClickListener(v -> runInstallerWithConfirmation(false));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:68:                runInstallerWithConfirmation(true);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:72:        mEditProfileButton.setOnClickListener(v -> mVersionSpinner.openProfileEditor(requireActivity()));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:91:            openPath(v.getContext(), getCurrentProfileDirectory(), false);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:102:    private File getCurrentProfileDirectory() {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:103:        String currentProfile = LauncherPreferences.DEFAULT_PREF.getString(LauncherPreferences.PREF_KEY_CURRENT_PROFILE, null);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:104:        if(!Tools.isValidString(currentProfile)) return new File(Tools.DIR_GAME_NEW);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:105:        LauncherProfiles.load();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:106:        MinecraftProfile profileObject = LauncherProfiles.mainProfileJson.profiles.get(currentProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:107:        if(profileObject == null) return new File(Tools.DIR_GAME_NEW);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:108:        return Tools.getGameDirPath(profileObject);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:114:        mVersionSpinner.reloadProfiles();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MainMenuFragment.java:117:    private void runInstallerWithConfirmation(boolean isCustomArgs) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/OptiFineInstallFragment.java:8:import net.kdt.pojavlaunch.JavaGUILauncherActivity;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/OptiFineInstallFragment.java:49:        Intent modInstallerStartIntent = new Intent(context, JavaGUILauncherActivity.class);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:33:import net.kdt.pojavlaunch.profiles.ProfileIconCache;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:34:import net.kdt.pojavlaunch.profiles.VersionSelectorDialog;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:36:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:37:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:46:public class ProfileEditorFragment extends Fragment implements CropperUtils.CropperListener{
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:47:    public static final String TAG = "ProfileEditorFragment";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:48:    public static final String DELETED_PROFILE = "deleted_profile";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:50:    private String mProfileKey;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:51:    private MinecraftProfile mTempProfile = null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:57:    private ImageView mProfileIcon;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:62:    public ProfileEditorFragment(){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:63:        super(R.layout.fragment_profile_editor);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:73:                mTempProfile.gameDir = value;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:75:                mTempProfile.controlFile = value;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:94:            ProfileIconCache.dropIcon(mProfileKey);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:100:            if(LauncherProfiles.mainProfileJson.profiles.size() > 1){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:101:                ProfileIconCache.dropIcon(mProfileKey);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:102:                LauncherProfiles.mainProfileJson.profiles.remove(mProfileKey);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:103:                LauncherProfiles.write();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:104:                ExtraCore.setValue(ExtraConstants.REFRESH_VERSION_SPINNER, DELETED_PROFILE);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:125:        mProfileIcon.setOnClickListener(v -> CropperUtils.startCropper(mCropperLauncher));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:127:        loadValues(LauncherPreferences.DEFAULT_PREF.getString(LauncherPreferences.PREF_KEY_CURRENT_PROFILE, ""), view.getContext());
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:157:            mTempProfile.lastVersionId = id;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:163:    private void loadValues(@NonNull String profile, @NonNull Context context){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:164:        if(mTempProfile == null){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:165:            mTempProfile = getProfile(profile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:169:        if ("vulkan_zink".equals(mTempProfile.pojavRendererName)) mTempProfile.pojavRendererName = "opengles3_desktopgl_zink_kopper";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:170:        mProfileIcon.setImageDrawable(
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:171:                ProfileIconCache.fetchIcon(getResources(), mProfileKey, mTempProfile.icon)
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:177:        if (mTempProfile.javaDir != null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:178:            String selectedRuntime = mTempProfile.javaDir.substring(Tools.LAUNCHERPROFILES_RTPREFIX.length());
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:188:        if(mTempProfile.pojavRendererName != null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:189:            int nindex = mRenderNames.indexOf(mTempProfile.pojavRendererName);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:194:        mDefaultVersion.setText(mTempProfile.lastVersionId);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:195:        mDefaultJvmArgument.setText(mTempProfile.javaArgs == null ? "" : mTempProfile.javaArgs);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:196:        mDefaultName.setText(mTempProfile.name);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:197:        mDefaultPath.setText(mTempProfile.gameDir == null ? "" : mTempProfile.gameDir);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:198:        mDefaultControl.setText(mTempProfile.controlFile == null ? "" : mTempProfile.controlFile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:201:    private MinecraftProfile getProfile(@NonNull String profile){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:202:        MinecraftProfile minecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:207:            // going to the main screen. mainProfileJson and profiles left uninitialized, which
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:209:            // Reload the profiles to avoid this edge case.
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:210:            LauncherProfiles.load();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:211:            MinecraftProfile originalProfile = LauncherProfiles.mainProfileJson.profiles.get(profile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:212:            // EDGE CASE: User edits the JSON, so the profile that was edited no longer exists.
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:213:            // Create a brand new profile as a fallback for this case.
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:214:            if(originalProfile != null) minecraftProfile = new MinecraftProfile(originalProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:215:            else minecraftProfile = MinecraftProfile.createTemplate();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:216:            mProfileKey = profile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:218:            minecraftProfile = MinecraftProfile.createTemplate();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:219:            mProfileKey = LauncherProfiles.getFreeProfileKey();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:221:        return minecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:228:        mDefaultRenderer = view.findViewById(R.id.vprof_editor_profile_renderer);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:232:        mDefaultName = view.findViewById(R.id.vprof_editor_profile_name);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:240:        mProfileIcon = view.findViewById(R.id.vprof_editor_profile_icon);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:245:        mTempProfile.lastVersionId = mDefaultVersion.getText().toString();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:246:        mTempProfile.controlFile = mDefaultControl.getText().toString();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:247:        mTempProfile.name = mDefaultName.getText().toString();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:248:        mTempProfile.javaArgs = mDefaultJvmArgument.getText().toString()
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:251:        mTempProfile.gameDir = mDefaultPath.getText().toString();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:253:        if(mTempProfile.controlFile.isEmpty()) mTempProfile.controlFile = null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:254:        if(mTempProfile.javaArgs.isEmpty()) mTempProfile.javaArgs = null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:255:        if(mTempProfile.gameDir.isEmpty()) mTempProfile.gameDir = null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:258:        mTempProfile.javaDir = (selectedRuntime.name.equals("<Default>") || selectedRuntime.versionString == null)
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:259:                ? null : Tools.LAUNCHERPROFILES_RTPREFIX + selectedRuntime.name;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:261:        if(mDefaultRenderer.getSelectedItemPosition() == mRenderNames.size()) mTempProfile.pojavRendererName = null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:262:        else mTempProfile.pojavRendererName = mRenderNames.get(mDefaultRenderer.getSelectedItemPosition());
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:265:        LauncherProfiles.mainProfileJson.profiles.put(mProfileKey, mTempProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:266:        LauncherProfiles.write();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:267:        ExtraCore.setValue(ExtraConstants.REFRESH_VERSION_SPINNER, mProfileKey);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:272:        mProfileIcon.setImageBitmap(contentBitmap);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:294:        String iconLine = new String(byteArrayOutputStream.toByteArray(), StandardCharsets.UTF_8);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/ProfileEditorFragment.java:295:        mTempProfile.icon = "data:image/webp;base64," + iconLine;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/SearchModFragment.java:27:import net.kdt.pojavlaunch.profiles.VersionSelectorDialog;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/SearchModFragment.java:147:        dialog.setOnShowListener(dialogInterface -> {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/SearchModFragment.java:166:                dialogInterface.dismiss();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MicrosoftLoginFragment.java:25:public class MicrosoftLoginFragment extends Fragment {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MicrosoftLoginFragment.java:26:    public static final String TAG = "MICROSOFT_LOGIN_FRAGMENT";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MicrosoftLoginFragment.java:33:        mWebview = (WebView) inflater.inflate(R.layout.fragment_microsoft_login, container, false);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MicrosoftLoginFragment.java:57:            mWebview.loadUrl("https://login.live.com/oauth20_authorize.srf" +
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MicrosoftLoginFragment.java:60:                    "&scope=service%3A%3Auser.auth.xboxlive.com%3A%3AMBI_SSL" +
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MicrosoftLoginFragment.java:61:                    "&redirect_url=https%3A%2F%2Flogin.live.com%2Foauth20_desktop.srf");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MicrosoftLoginFragment.java:107:                ExtraCore.setValue(ExtraConstants.MICROSOFT_LOGIN_TODO, Uri.parse(url));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/MicrosoftLoginFragment.java:108:                Toast.makeText(view.getContext(), "Login started !", Toast.LENGTH_SHORT).show();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/SelectAuthFragment.java:23:        Button mMicrosoftButton = view.findViewById(R.id.button_microsoft_authentication);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/SelectAuthFragment.java:24:        Button mLocalButton = view.findViewById(R.id.button_local_authentication);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/SelectAuthFragment.java:26:        mMicrosoftButton.setOnClickListener(v -> Tools.swapFragment(requireActivity(), MicrosoftLoginFragment.class, MicrosoftLoginFragment.TAG, null));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/fragments/SelectAuthFragment.java:27:        mLocalButton.setOnClickListener(v -> Tools.swapFragment(requireActivity(), LocalLoginFragment.class, LocalLoginFragment.TAG, null));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:6:import static net.kdt.pojavlaunch.Tools.hasNoOnlineProfileDialog;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:7:import static net.kdt.pojavlaunch.Tools.isOnline;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:33:import com.kdt.mcgui.mcAccountSpinner;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:40:import net.kdt.pojavlaunch.fragments.MicrosoftLoginFragment;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:61:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:62:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:72:import java.util.Locale;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:102:                                    String readMB = fileSize > 0 ? String.format(Locale.US, "%.2f", readTotal / (1024.0 * 1024.0)) : "unknown";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:103:                                    String totalMB = fileSize > 0 ? String.format(Locale.US, "%.2f", fileSize / (1024.0 * 1024.0)) : "unknown";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:129:    private mcAccountSpinner mAccountSpinner;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:155:        // Allow starting the add account only from the main menu, should it be moved to fragment itself ?
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:179:        String selectedProfile = LauncherPreferences.DEFAULT_PREF.getString(LauncherPreferences.PREF_KEY_CURRENT_PROFILE,"");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:180:        if (LauncherProfiles.mainProfileJson == null || !LauncherProfiles.mainProfileJson.profiles.containsKey(selectedProfile)){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:184:        MinecraftProfile prof = LauncherProfiles.mainProfileJson.profiles.get(selectedProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:190:        if(mAccountSpinner.getSelectedAccount() == null){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:191:            Toast.makeText(this, R.string.no_saved_accounts, Toast.LENGTH_LONG).show();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:215:                LauncherProfiles.mainProfileJson.profiles.put(selectedProfile, prof);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:216:                LauncherProfiles.write();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:220:            // We just installed a json, we need internet + online acc to download so we add super
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:223:                String jsonPath = LWJGL3ifyUtils.getJsonPath(LWJGL3ifyUtils.getProfileID(lwjgl3ifyJar));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:226:                    if (mAccountSpinner.getSelectedAccount().isLocal() || !isOnline(this)){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:239:        // Do not load when is a modded version or older than minecraft 1.3 on demo account
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:240:        if (mAccountSpinner.getSelectedAccount().isDemo()) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:250:                hasNoOnlineProfileDialog(this, getString(R.string.global_error), getString(R.string.demo_versions_supported));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:348:        mProgressLayout.observe(ProgressLayout.AUTHENTICATE_MICROSOFT);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:388:        MicrosoftLoginFragment fragment = (MicrosoftLoginFragment) getVisibleFragment(MicrosoftLoginFragment.TAG);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/LauncherActivity.java:489:        mAccountSpinner = findViewById(R.id.account_spinner);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/AsyncAssetManager.java:83:                Tools.copyAssetFile(ctx, "launcher_profiles.json", Tools.DIR_GAME_NEW, false);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/NativesExtractor.java:97:            // File in archive is the same as the local one, don't extract
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:62:    private static final ThreadLocal<byte[]> sThreadLocalDownloadBuffer = new ThreadLocal<>();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:64:    private boolean isLocalProfile = false;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:65:    private boolean isOnline;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:78:            isLocalProfile = Tools.isLocalProfile(activity);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:79:            isOnline = Tools.isOnline(activity);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:80:            Tools.switchDemo(Tools.isDemoProfile(activity));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:83:            isLocalProfile = true;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:84:            Tools.switchDemo(true);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:89:                if(isLocalProfile || !isOnline) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:108:                        String tryagain = !isOnline ? "Please ensure you have an internet connection" : "Please try again on your Microsoft Account";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:455:    private static byte[] getLocalBuffer() {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:456:        byte[] tlb = sThreadLocalDownloadBuffer.get();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:459:        sThreadLocalDownloadBuffer.set(tlb);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:505:            // Only use cache when its offline. No point in having cache invalidation now!
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:506:            if (!isOnline || !LauncherPreferences.PREF_CHECK_LIBRARY_SHA) { // Well not only offlines..this setting speeds up launch times at least!
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java:585:                            getLocalBuffer(), this);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/AsyncMinecraftDownloader.java:6:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/AsyncMinecraftDownloader.java:12:        if(MinecraftProfile.LATEST_RELEASE.equals(versionString)) versionString = versionList.latest.get("release");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/AsyncMinecraftDownloader.java:13:        if(MinecraftProfile.LATEST_SNAPSHOT.equals(versionString)) versionString = versionList.latest.get("snapshot");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:7:import static net.kdt.pojavlaunch.Tools.LOCAL_RENDERER;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:221:        if(LOCAL_RENDERER != null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:222:            envMap.put("AMETHYST_RENDERER", LOCAL_RENDERER);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:223:            if(LOCAL_RENDERER.equals("opengles3_ltw")) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:227:            if(LOCAL_RENDERER.equals("opengles_mobileglues")){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:231:            if(LOCAL_RENDERER.equals("opengles2")){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:234:            if (LOCAL_RENDERER.equals("opengles3_desktopgl_zink_kopper")){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:238:            if (LOCAL_RENDERER.toLowerCase().contains("zink")){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:250:        if(!envMap.containsKey("LIBGL_ES") && LOCAL_RENDERER != null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:257:            } else if (LOCAL_RENDERER.startsWith("opengles")) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:258:                envMap.put("LIBGL_ES", LOCAL_RENDERER.replace("opengles", "").replace("_5", ""));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:344:        if(LOCAL_RENDERER != null) userArgs.add("-Dorg.lwjgl.opengl.libname=" + graphicsLib);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:375:                    .setPositiveButton(R.string.main_share_logs, (dialogInterface, which)-> shareLog(activity));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:402:                "-Dpojav.path.private.account=" + Tools.DIR_ACCOUNT_NEW,
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:507:        if(LOCAL_RENDERER == null) return null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:509:        switch (LOCAL_RENDERER){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:524:        if(LOCAL_RENDERER.equals("opengles_mobileglues")){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/JREUtils.java:535:            LOCAL_RENDERER = "opengles2";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/LocaleUtils.java:10:import android.os.LocaleList;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/LocaleUtils.java:15:public class LocaleUtils extends ContextWrapper {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/LocaleUtils.java:17:    public LocaleUtils(Context base) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/LocaleUtils.java:21:    public static ContextWrapper setLocale(Context context) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/LocaleUtils.java:34:            configuration.setLocale(Locale.ENGLISH);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/LocaleUtils.java:35:            Locale.setDefault(Locale.ENGLISH);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/LocaleUtils.java:37:                LocaleList localeList = new LocaleList(Locale.ENGLISH);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/LocaleUtils.java:38:                LocaleList.setDefault(localeList);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/LocaleUtils.java:39:                configuration.setLocales(localeList);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/LocaleUtils.java:48:        return new LocaleUtils(context);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/DateUtils.java:12:import java.util.Locale;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/utils/DateUtils.java:26:        return new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(releaseTime);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MinecraftGLSurface.java:4:import static net.kdt.pojavlaunch.Tools.LOCAL_RENDERER;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MinecraftGLSurface.java:139:            useSurfaceView = useSurfaceView && !LOCAL_RENDERER.equals("opengles3_desktopgl_zink_kopper") &&
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/imgcropper/BitmapCropBehaviour.java:62:        computeLocalPrescaleMatrix();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/imgcropper/BitmapCropBehaviour.java:67:        computeLocalPrescaleMatrix();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/imgcropper/BitmapCropBehaviour.java:143:    private void computeLocalPrescaleMatrix() {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:1:package net.kdt.pojavlaunch.value.launcherprofiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:17:public class LauncherProfiles {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:18:    public static MinecraftLauncherProfiles mainProfileJson;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:19:    private static final File launcherProfilesFile = new File(Tools.GAME_PROFILES_FILE);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:21:    /** Reload the profile from the file, creating a default one if necessary */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:23:        if (launcherProfilesFile.exists()) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:25:                mainProfileJson = Tools.GLOBAL_GSON.fromJson(Tools.read(launcherProfilesFile.getAbsolutePath()), MinecraftLauncherProfiles.class);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:27:                Log.e(LauncherProfiles.class.toString(), "Failed to load file: ", e);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:33:        if (mainProfileJson == null) mainProfileJson = new MinecraftLauncherProfiles();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:34:        if (mainProfileJson.profiles == null) mainProfileJson.profiles = new HashMap<>();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:35:        if (mainProfileJson.profiles.size() == 0)
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:36:            mainProfileJson.profiles.put(UUID.randomUUID().toString(), MinecraftProfile.getDefaultProfile());
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:38:        // Normalize profile names from mod installers
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:39:        if(normalizeProfileIds(mainProfileJson)){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:48:            Tools.write(launcherProfilesFile.getAbsolutePath(), mainProfileJson.toJson());
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:50:            Log.e(LauncherProfiles.class.toString(), "Failed to write profile file", e);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:55:    public static @NonNull MinecraftProfile getCurrentProfile() {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:56:        if(mainProfileJson == null) LauncherProfiles.load();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:57:        String defaultProfileName = LauncherPreferences.DEFAULT_PREF.getString(LauncherPreferences.PREF_KEY_CURRENT_PROFILE, "");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:58:        MinecraftProfile profile = mainProfileJson.profiles.get(defaultProfileName);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:59:        if(profile == null) throw new RuntimeException("The current profile stopped existing :(");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:60:        return profile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:64:     * Insert a new profile into the profile map
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:65:     * @param minecraftProfile the profile to insert
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:67:    public static void insertMinecraftProfile(MinecraftProfile minecraftProfile) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:68:        mainProfileJson.profiles.put(getFreeProfileKey(), minecraftProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:72:     * Pick an unused normalized key to store a new profile with
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:75:    public static String getFreeProfileKey() {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:76:        Map<String, MinecraftProfile> profileMap = mainProfileJson.profiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:78:        while(profileMap.get(freeKey) != null) freeKey = UUID.randomUUID().toString();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:83:     * For all keys to be UUIDs, effectively isolating profile created by installers
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:84:     * This avoids certain profiles to be erased by the installer
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:85:     * @return Whether some profiles have been normalized
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:87:    private static boolean normalizeProfileIds(MinecraftLauncherProfiles launcherProfiles){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:92:        for(String profileKey : launcherProfiles.profiles.keySet()){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:94:                if(!UUID.fromString(profileKey).toString().equals(profileKey)) keys.add(profileKey);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:96:                keys.add(profileKey);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:97:                Log.w(LauncherProfiles.class.toString(), "Illegal profile uuid: " + profileKey);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:102:        for(String profileKey : keys){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:103:            MinecraftProfile currentProfile = launcherProfiles.profiles.get(profileKey);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:104:            insertMinecraftProfile(currentProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java:105:            launcherProfiles.profiles.remove(profileKey);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftSelectedUser.java:1:package net.kdt.pojavlaunch.value.launcherprofiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftSelectedUser.java:7:	public String account;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftSelectedUser.java:8:	public String profile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftResolution.java:1:package net.kdt.pojavlaunch.value.launcherprofiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftLauncherSettings.java:1:package net.kdt.pojavlaunch.value.launcherprofiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftLauncherSettings.java:11:	public String locale;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftLauncherSettings.java:14:	public String profileSorting;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:1:package net.kdt.pojavlaunch.value.launcherprofiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:6:public class MinecraftProfile {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:27:	public static MinecraftProfile createTemplate(){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:28:		MinecraftProfile TEMPLATE = new MinecraftProfile();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:34:	public static MinecraftProfile getDefaultProfile(){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:35:		MinecraftProfile defaultProfile = new MinecraftProfile();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:36:		defaultProfile.name = "Default";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:37:		defaultProfile.lastVersionId = "1.7.10";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:38:		return defaultProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:41:	public MinecraftProfile(){}
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:43:	public MinecraftProfile(MinecraftProfile profile){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:44:		name = profile.name;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:45:		type = profile.type;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:46:		created = profile.created;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:47:		lastUsed = profile.lastUsed;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:48:		icon = profile.icon;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:49:		lastVersionId = profile.lastVersionId;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:50:		gameDir = profile.gameDir;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:51:		javaDir = profile.javaDir;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:52:		javaArgs = profile.javaArgs;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:53:		logConfig = profile.logConfig;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:54:		logConfigIsXML = profile.logConfigIsXML;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:55:		pojavRendererName = profile.pojavRendererName;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:56:		controlFile = profile.controlFile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java:57:		resolution = profile.resolution;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftAuthenticationDatabase.java:1:package net.kdt.pojavlaunch.value.launcherprofiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftAuthenticationDatabase.java:11:	// public MinecraftProfile[] profiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftLauncherProfiles.java:1:package net.kdt.pojavlaunch.value.launcherprofiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftLauncherProfiles.java:8:public class MinecraftLauncherProfiles {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftLauncherProfiles.java:9:	public Map<String, MinecraftProfile> profiles = new HashMap<>();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftLauncherProfiles.java:10:	public boolean profilesWereMigrated;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:22:public class MinecraftAccount {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:25:    public String profileId = "00000000-0000-0000-0000-000000000000"; // profile UUID, for obtaining skin
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:28:    public boolean isMicrosoft = false;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:48:    public boolean isLocal(){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:49:        return accessToken.equals("0") && !username.startsWith("Demo.");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:52:    public boolean isDemo(){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:53:        return username.startsWith("Demo.");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:57:        updateSkinFace(profileId);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:66:        return save(Tools.DIR_ACCOUNT_NEW + "/" + username + ".json");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:69:    public static MinecraftAccount parse(String content) throws JsonSyntaxException {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:70:        return Tools.GLOBAL_GSON.fromJson(content, MinecraftAccount.class);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:73:    public static MinecraftAccount load(String name) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:74:        if(!accountExists(name)) return null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:76:            MinecraftAccount acc = parse(Tools.read(Tools.DIR_ACCOUNT_NEW + "/" + name + ".json"));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:83:            if (acc.profileId == null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:84:                acc.profileId = "00000000-0000-0000-0000-000000000000";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:97:            Log.e(MinecraftAccount.class.getName(), "Caught an exception while loading the profile",e);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:103:        if(isLocal()) return null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:128:    private static boolean accountExists(String username){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/value/MinecraftAccount.java:129:        return new File(Tools.DIR_ACCOUNT_NEW + "/" + username + ".json").exists();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:76:import net.kdt.pojavlaunch.value.MinecraftAccount;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:77:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:78:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:114:    MinecraftProfile minecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:120:    private GameService.LocalBinder mServiceBinder;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:129:        minecraftProfile = LauncherProfiles.getCurrentProfile();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:131:        String gameDirPath = Tools.getGameDirPath(minecraftProfile).getAbsolutePath();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:236:            if(minecraftProfile.pojavRendererName != null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:237:                Log.i("RdrDebug","__P_renderer="+minecraftProfile.pojavRendererName);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:238:                Tools.LOCAL_RENDERER = minecraftProfile.pojavRendererName;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:241:                if (minecraftProfile.pojavRendererName.equals("vulkan_zink")) Tools.LOCAL_RENDERER = "opengles3_desktopgl_zink_kopper";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:244:            setTitle("Minecraft " + minecraftProfile.lastVersionId);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:249:            version = version == null ? minecraftProfile.lastVersionId : version;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:302:                    minecraftProfile.controlFile == null
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:304:                            : Tools.CTRLMAP_PATH + "/" + minecraftProfile.controlFile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:458:        if (Tools.LOCAL_RENDERER == null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:462:            Tools.LOCAL_RENDERER = "opengles2";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:470:                hasMods("angelica")) Tools.LOCAL_RENDERER = "opengles_mobileglues";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:472:        if(!Tools.checkRendererCompatible(this, Tools.LOCAL_RENDERER)) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:475:            Log.w("runCraft","Incompatible renderer "+Tools.LOCAL_RENDERER+ " will be replaced with "+firstCompatibleRenderer);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:476:            Tools.LOCAL_RENDERER = firstCompatibleRenderer;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:485:        File folder = new File(Tools.getGameDirPath(minecraftProfile), "server-resource-pack");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:490:        MinecraftAccount minecraftAccount = PojavProfile.getCurrentProfileContent(this, null);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:494:        Tools.printLauncherInfo(versionId, Tools.isValidString(minecraftProfile.javaArgs) ? minecraftProfile.javaArgs : LauncherPreferences.PREF_CUSTOM_JAVA_ARGS, Tools.getTotalDeviceMemory(this));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:495:        if(Tools.LOCAL_RENDERER.equals("opengles_mobileglues")) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:499:        LauncherProfiles.load();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:502:        Tools.launchMinecraft(this, minecraftAccount, minecraftProfile, versionId, requiredJavaVersion);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:668:                    minecraftProfile.controlFile == null
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:670:                            : Tools.CTRLMAP_PATH + "/" + minecraftProfile.controlFile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:683:        GameService.LocalBinder localBinder = (GameService.LocalBinder) service;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:684:        mServiceBinder = localBinder;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:685:        minecraftGLView.start(localBinder.isActive, touchpad);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/MainActivity.java:686:        localBinder.isActive = true;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/NewJREUtil.java:6:import static net.kdt.pojavlaunch.Tools.isOnline;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/NewJREUtil.java:20:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/NewJREUtil.java:21:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/NewJREUtil.java:87:        LauncherProfiles.load();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/NewJREUtil.java:89:        MinecraftProfile minecraftProfile = LauncherProfiles.getCurrentProfile();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/NewJREUtil.java:90:        String profileRuntime = Tools.getSelectedRuntime(minecraftProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/NewJREUtil.java:91:        Runtime runtime = MultiRTUtils.read(profileRuntime);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/NewJREUtil.java:156:        minecraftProfile.javaDir = Tools.LAUNCHERPROFILES_RTPREFIX + appropriateRuntime;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/NewJREUtil.java:157:        LauncherProfiles.write();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/NewJREUtil.java:182:        if (!isOnline(activity)) throw new RuntimeException(activity.getString(R.string.multirt_no_internet));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/AWTInputEvent.java:592:     * Constant for the Microsoft Windows "Windows" key.
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/AWTInputEvent.java:600:     * Constant for the Microsoft Windows Context Menu key.
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/AWTInputEvent.java:607:    /* not clear what this means - listed in Microsoft Windows API */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/AWTInputEvent.java:622:    /* not clear what this means - listed in Microsoft Windows API */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/AWTInputEvent.java:625:    /* replaced by VK_KANA_LOCK for Microsoft Windows and Solaris;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/AWTInputEvent.java:629:    /* replaced by VK_INPUT_METHOD_ON_OFF for Microsoft Windows and Solaris;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/lifecycle/LifecycleAwareAlertDialog.java:4:import android.content.DialogInterface;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/lifecycle/LifecycleAwareAlertDialog.java:75:    public DialogInterface.OnDismissListener wrapDismissListener(DialogInterface.OnCancelListener listener) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/services/GameService.java:25:    private final LocalBinder mLocalBinder = new LocalBinder();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/services/GameService.java:74:        return mLocalBinder;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/services/GameService.java:77:    public static class LocalBinder extends Binder {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/BaseActivity.java:14:        super.attachBaseContext(LocaleUtils.setLocale(newBase));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/BaseActivity.java:20:        LocaleUtils.setLocale(this);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:8:import static net.kdt.pojavlaunch.PojavProfile.getAllProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:78:import net.kdt.pojavlaunch.value.MinecraftAccount;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:80:import net.kdt.pojavlaunch.value.launcherprofiles.LauncherProfiles;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:81:import net.kdt.pojavlaunch.value.launcherprofiles.MinecraftProfile;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:110:import java.util.Locale;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:126:    public static String LOCAL_RENDERER = null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:128:    public static final String LAUNCHERPROFILES_RTPREFIX = "amethyst://";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:131:    public static String DIR_ACCOUNT_NEW;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:134:    public static String GAME_PROFILES_FILE;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:200:        DIR_ACCOUNT_NEW = DIR_DATA + "/accounts";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:220:        GAME_PROFILES_FILE = Tools.DIR_GAME_NEW + "/launcher_profiles.json";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:221:        switchDemo(isDemoProfile(ctx));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:269:     * @return The selected "Custom path" of the current profile
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:273:        return getGameDirPath(LauncherProfiles.getCurrentProfile());
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:277:     * Searches for mod in mods directory of current selected profile
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:287:     * Searches for mod in mods directory of current selected profile
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:310:     * Tries to delete any sodium related mods of the currently selected profile via string matching
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:358:            String name = file.getName().toLowerCase(Locale.ROOT);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:385:        if(!"opengles3_ltw".equals(Tools.LOCAL_RENDERER)) return false;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:403:    public static void launchMinecraft(final AppCompatActivity activity, MinecraftAccount minecraftAccount,
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:404:                                       MinecraftProfile minecraftProfile, String versionId, int versionJavaRequirement) throws Throwable {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:406:        int localeString;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:411:            localeString = R.string.address_memory_warning_msg;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:413:            localeString = R.string.memory_warning_msg;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:419:                builder.setMessage(activity.getString(localeString, finalDeviceMemory, LauncherPreferences.PREF_RAM_ALLOCATION))
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:428:        LauncherProfiles.load();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:429:        File gamedir = Tools.getGameDirPath(minecraftProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:449:        Runtime runtime = MultiRTUtils.forceReread(Tools.pickRuntime(minecraftProfile, versionJavaRequirement));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:455:        String[] launchArgs = getMinecraftClientArgs(minecraftAccount, versionInfo, gamedir);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:543:        if(Tools.isValidString(minecraftProfile.javaArgs)) args = minecraftProfile.javaArgs;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:653:    public static File getGameDirPath(@NonNull MinecraftProfile minecraftProfile){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:654:        if(minecraftProfile.gameDir != null){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:655:            if(minecraftProfile.gameDir.startsWith(Tools.LAUNCHERPROFILES_RTPREFIX))
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:656:                return new File(minecraftProfile.gameDir.replace(Tools.LAUNCHERPROFILES_RTPREFIX,Tools.DIR_GAME_HOME+"/"));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:658:                return new File(Tools.DIR_GAME_HOME,minecraftProfile.gameDir);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:798:    public static String[] getMinecraftClientArgs(MinecraftAccount profile, JMinecraftVersionList.Version versionInfo, File gameDir) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:799:        String username = profile.username.replace("Demo.", "");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:815:            Log.e("CheckForProfileKey", "Failed to determine profile creation date, using \"mojang\"", e);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:820:        varArgMap.put("auth_session", profile.accessToken); // For legacy versions of MC
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:821:        varArgMap.put("auth_access_token", profile.accessToken);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:823:        varArgMap.put("auth_uuid", profile.profileId.replace("-", ""));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:824:        varArgMap.put("auth_xuid", profile.xuid);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:848:        if(profile.isDemo()) mcArguments += " --demo";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1551:                    Intent intent = new Intent(activity, JavaGUILauncherActivity.class);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1573:        Intent intent = new Intent(activity, JavaGUILauncherActivity.class);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1610:        if(!prefixedName.startsWith(Tools.LAUNCHERPROFILES_RTPREFIX)) return null;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1611:        return prefixedName.substring(Tools.LAUNCHERPROFILES_RTPREFIX.length());
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1614:    public static String getSelectedRuntime(MinecraftProfile minecraftProfile) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1616:        String profileRuntime = getRuntimeName(minecraftProfile.javaDir);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1617:        if(profileRuntime != null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1618:            if(MultiRTUtils.forceReread(profileRuntime).versionString != null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1619:                runtime = profileRuntime;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1629:    public static @NonNull String pickRuntime(MinecraftProfile minecraftProfile, int targetJavaVersion) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1630:        String runtime = getSelectedRuntime(minecraftProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1631:        String profileRuntime = getRuntimeName(minecraftProfile.javaDir);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1636:            if(profileRuntime != null) minecraftProfile.javaDir = Tools.LAUNCHERPROFILES_RTPREFIX+preferredRuntime;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1717:        return Build.MANUFACTURER.toLowerCase(Locale.ROOT).contains("huawei");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1800:    public static void switchDemo(boolean isDemo){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1801:        if(isDemo) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1802:            DIR_GAME_NEW = DIR_DATA + "/demo/.minecraft";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1818:    public static boolean isOnline(Context ctx) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1824:    public static boolean isDemoProfile(Context ctx){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1825:        MinecraftAccount currentProfile = PojavProfile.getCurrentProfileContent(ctx, null);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1826:        return currentProfile != null && currentProfile.isDemo();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1829:    public static boolean isLocalProfile(Context ctx){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1830:        MinecraftAccount currentProfile = PojavProfile.getCurrentProfileContent(ctx, null);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1831:        return currentProfile == null || currentProfile.isLocal();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1833:    public static boolean hasOnlineProfile(){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1834:        for (MinecraftAccount accountToCheck : getAllProfiles()) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1835:            if (!accountToCheck.isLocal() && !accountToCheck.isDemo()) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1842:    public static void hasNoOnlineProfileDialog(Activity activity, @Nullable Runnable run, @Nullable String customTitle, @Nullable String customMessage){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1849:    public static void hasNoOnlineProfileDialog(Activity activity){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1850:        hasNoOnlineProfileDialog(activity, null, null, null);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1852:    public static void hasNoOnlineProfileDialog(Activity activity, Runnable run){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1853:        hasNoOnlineProfileDialog(activity, run, null, null);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1855:    public static void hasNoOnlineProfileDialog(Activity activity, String customTitle, String customMessage){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1856:        hasNoOnlineProfileDialog(activity, null, customTitle, customMessage);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1860:        String selectedProfile = LauncherPreferences.DEFAULT_PREF.getString(LauncherPreferences.PREF_KEY_CURRENT_PROFILE, "");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1861:        MinecraftProfile selected = LauncherProfiles.mainProfileJson.profiles.get(selectedProfile);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java:1863:            throw new RuntimeException("No profile selected, how did you reach this? Go ask in the discord or github");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/prefs/LauncherPreferences.java:26:    public static final String PREF_KEY_CURRENT_PROFILE = "currentProfile";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/prefs/MathQuestionPreference.java:8:import android.content.DialogInterface;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/prefs/MathQuestionPreference.java:24:import java.util.Locale;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/prefs/MathQuestionPreference.java:101:        Button positiveButton = mathDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/prefs/MathQuestionPreference.java:108:                positiveButton.setText(String.format(Locale.ROOT, "%s(%d)", ctx.getString(android.R.string.ok), secondsLeft));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/prefs/screens/LauncherPreferenceJavaFragment.java:34:        mSwitchAutoJRE.setSummary("Stops automatic selection of which runtime to use in \"" + getString(R.string.main_install_jar_file) + "\"");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/prefs/CustomSeekBarPreference.java:54:        //Note: since the max (setMax is a final function) is not taken into account properly, setting the min over the max may produce funky results
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/customcontrols/mouse/GyroControl.java:21:    /* How much distance has to be moved before taking into account the gyro */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/customcontrols/ControlLayout.java:530:		dialog.setOnShowListener(dialogInterface -> {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/customcontrols/gamepad/Gamepad.java:85:    @SuppressWarnings("FieldCanBeLocal") //the field is used in a WeakReference
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/customcontrols/gamepad/GamepadMapperAdapter.java:136:        public final int localeResourceId;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/customcontrols/gamepad/GamepadMapperAdapter.java:139:        public RebinderButton(int iconResourceId, int localeResourceId) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/customcontrols/gamepad/GamepadMapperAdapter.java:141:            this.localeResourceId = localeResourceId;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/customcontrols/gamepad/GamepadMapperAdapter.java:194:            String buttonName = mContext.getString(rebinderButton.localeResourceId);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:9:import net.kdt.pojavlaunch.value.MinecraftAccount;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:18:public class PojavProfile {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:19:	private static final String PROFILE_PREF = "pojav_profile";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:20:	private static final String PROFILE_PREF_FILE = "file";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:23:		return ctx.getSharedPreferences(PROFILE_PREF, Context.MODE_PRIVATE);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:26:    public static MinecraftAccount getCurrentProfileContent(@NonNull Context ctx, @Nullable String profileName) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:27:        return MinecraftAccount.load(profileName == null ? getCurrentProfileName(ctx) : profileName);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:30:    public static String getCurrentProfileName(Context ctx) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:31:        String name = getPrefs(ctx).getString(PROFILE_PREF_FILE, "");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:33:        if (!name.isEmpty() && name.startsWith(Tools.DIR_ACCOUNT_NEW) && name.endsWith(".json")) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:34:            name = name.substring(0, name.length() - 5).replace(Tools.DIR_ACCOUNT_NEW, "").replace(".json", "");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:35:            setCurrentProfile(ctx, name);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:40:	public static List<MinecraftAccount> getAllProfiles(){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:41:		List<MinecraftAccount> mcAccountList = new ArrayList<>();;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:42:		for (String accountName : getAllProfilesList()){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:43:			if (MinecraftAccount.load(accountName) != null) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:44:				mcAccountList.add(MinecraftAccount.load(accountName));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:47:		return mcAccountList;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:50:	public static List<String> getAllProfilesList(){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:51:		List<String> accountList = new ArrayList<>();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:52:		File accountFolder = new File(Tools.DIR_ACCOUNT_NEW);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:53:		if(accountFolder.exists() && accountFolder.list() != null){
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:54:			for (String fileName : Objects.requireNonNull(accountFolder.list())) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:55:				accountList.add(fileName.substring(0, fileName.length() - 5));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:58:		return accountList;
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:61:	public static void setCurrentProfile(@NonNull Context ctx, @Nullable  Object obj) {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:66:				pref.putString(PROFILE_PREF_FILE, acc);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:67:                //MinecraftAccount.clearTempAccount();
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:69:				pref.putString(PROFILE_PREF_FILE, "");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavProfile.java:71:				throw new IllegalArgumentException("Profile must be String.class or null");
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/JavaGUILauncherActivity.java:47:public class JavaGUILauncherActivity extends BaseActivity implements View.OnTouchListener {
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/JavaGUILauncherActivity.java:182:                Tools.dialogForceClose(JavaGUILauncherActivity.this);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/JavaGUILauncherActivity.java:205:            finalErrorDialog(getString(R.string.execute_jar_failed_to_read_file));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavApplication.java:95:        super.attachBaseContext(LocaleUtils.setLocale(base));
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/PojavApplication.java:101:        LocaleUtils.setLocale(this);
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/extra/ExtraConstants.java:10:    /* ExtraCore constant: When the microsoft authentication via webview is done */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/extra/ExtraConstants.java:11:    public static final String MICROSOFT_LOGIN_TODO = "webview_login_done";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/extra/ExtraConstants.java:12:    /* ExtraCore constant: Mojang or "local" authentication to perform */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/extra/ExtraConstants.java:13:    public static final String MOJANG_LOGIN_TODO = "mojang_login_todo";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/extra/ExtraConstants.java:14:    /* ExtraCore constant: Add minecraft account procedure, the user has to select between mojang or microsoft */
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/extra/ExtraConstants.java:15:    public static final String SELECT_AUTH_METHOD = "start_login_procedure";
+app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/extra/ExtraConstants.java:18:    /* ExtraCore constant: Need to refresh the version spinner, selecting the uuid at the same time. Can be DELETED_PROFILE */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:33:import net.kdt.pojavlaunch.PojavProfile;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:39:import net.kdt.pojavlaunch.authenticator.microsoft.PresentedException;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:40:import net.kdt.pojavlaunch.authenticator.microsoft.MicrosoftBackgroundLogin;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:44:import net.kdt.pojavlaunch.value.MinecraftAccount;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:55:public class mcAccountSpinner extends AppCompatSpinner implements AdapterView.OnItemSelectedListener {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:56:    public mcAccountSpinner(@NonNull Context context) {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:59:    public mcAccountSpinner(@NonNull Context context, @Nullable AttributeSet attrs) {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:64:    private final List<String> mAccountList = new ArrayList<>(2);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:65:    private MinecraftAccount mSelectecAccount = null;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:67:    /* Display the head of the current profile, here just to allow bitmap recycling */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:70:    /* Current animator to for the login bar, is swapped when changing step */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:71:    private ObjectAnimator mLoginBarAnimator;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:72:    private float mLoginBarWidth = -1;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:74:    /* Paint used to display the bottom bar, to show the login progress. */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:75:    private final Paint mLoginBarPaint = new Paint();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:77:    /* When a login is performed in the background, we need to know where we are */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:78:    private final static int MAX_LOGIN_STEP = 5;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:79:    private int mLoginStep = 0;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:81:    /* Login listeners */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:83:        // Animate the login bar, cosmetic purposes only
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:84:        mLoginStep = step;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:85:        if(mLoginBarAnimator != null){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:86:            mLoginBarAnimator.cancel();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:87:            mLoginBarAnimator.setFloatValues( mLoginBarWidth, (getWidth()/MAX_LOGIN_STEP * mLoginStep));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:89:            mLoginBarAnimator = ObjectAnimator.ofFloat(this, "LoginBarWidth", mLoginBarWidth, (getWidth()/MAX_LOGIN_STEP * mLoginStep));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:91:        mLoginBarAnimator.start();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:94:    private final DoneListener mDoneListener = account -> {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:95:        Toast.makeText(getContext(), R.string.main_login_done, Toast.LENGTH_SHORT).show();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:97:        // Check if the account being added is not one that is already existing
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:98:        // Like login twice on the same mc account...
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:99:        for(String mcAccountName : mAccountList){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:100:            if(mcAccountName.equals(account.username)) return;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:103:        mSelectecAccount = account;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:105:        mAccountList.add(account.username);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:106:        reloadAccounts(false, mAccountList.size() -1);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:110:        mLoginBarPaint.setColor(Color.RED);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:126:    /* Triggered when we need to do microsoft login */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:127:    private final ExtraListener<Uri> mMicrosoftLoginListener = (key, value) -> {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:128:        mLoginBarPaint.setColor(getResources().getColor(R.color.minebutton_color));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:129:        new MicrosoftBackgroundLogin(false, value.getQueryParameter("code")).performLogin(
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:134:    /* Triggered when we need to perform mojang login */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:135:    private final ExtraListener<String[]> mMojangLoginListener = (key, value) -> {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:137:            MinecraftAccount account = new MinecraftAccount();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:138:            account.username = value[0];
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:140:                account.save();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:142:                Log.e("McAccountSpinner", "Failed to save the account : " + e);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:145:            mDoneListener.onLoginDone(account);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:155:        mLoginBarPaint.setColor(getResources().getColor(R.color.minebutton_color));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:156:        mLoginBarPaint.setStrokeWidth(getResources().getDimensionPixelOffset(R.dimen._2sdp));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:159:        reloadAccounts(true, 0);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:162:        ExtraCore.addExtraListener(ExtraConstants.MOJANG_LOGIN_TODO, mMojangLoginListener);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:163:        ExtraCore.addExtraListener(ExtraConstants.MICROSOFT_LOGIN_TODO, mMicrosoftLoginListener);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:169:        if(position == 0){  // Add account button
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:170:            if(mAccountList.size() > 1){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:176:        pickAccount(position);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:177:        if(mSelectecAccount != null)
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:178:            performLogin(mSelectecAccount);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:187:        if(mLoginBarWidth == -1) mLoginBarWidth = getWidth(); // Initial draw
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:189:        float bottom = getHeight() - mLoginBarPaint.getStrokeWidth()/2;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:190:        canvas.drawLine(0, bottom, mLoginBarWidth, bottom, mLoginBarPaint);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:193:    public void removeCurrentAccount(){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:194:        removeAccount(getSelectedItemPosition());
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:197:    private void removeAccount(int position) {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:199:        File accountFile = new File(Tools.DIR_ACCOUNT_NEW, mAccountList.get(position)+".json");
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:200:        if(accountFile.exists()) accountFile.delete();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:201:        mAccountList.remove(position);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:203:        reloadAccounts(false, 0);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:207:    public void setLoginBarWidth(float value){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:208:        mLoginBarWidth = value;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:212:    /** Allows checking whether we have an online account */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:213:    public boolean isAccountOnline(){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:214:        return mSelectecAccount != null && !mSelectecAccount.accessToken.equals("0");
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:217:    public MinecraftAccount getSelectedAccount(){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:218:        return mSelectecAccount;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:221:    public int getLoginState(){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:222:        return mLoginStep;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:225:    public boolean isLoginDone(){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:226:        return mLoginStep >= MAX_LOGIN_STEP;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:230:    private void setNoAccountBehavior(){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:231:        // Set custom behavior when no account are present, to make it act as a button
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:232:        if(mAccountList.size() != 1){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:248:     * Reload the spinner, from memory or from scratch. A default account can be selected
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:252:    private void reloadAccounts(boolean fromFiles, int overridePosition){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:254:            mAccountList.clear();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:256:            mAccountList.add(getContext().getString(R.string.main_add_account));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:257:            File accountFolder = new File(Tools.DIR_ACCOUNT_NEW);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:258:            if(accountFolder.exists()){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:259:                for (String fileName : accountFolder.list()) {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:260:                    mAccountList.add(fileName.substring(0, fileName.length() - 5));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:265:        String[] accountArray = mAccountList.toArray(new String[0]);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:266:        AccountAdapter accountAdapter = new AccountAdapter(getContext(), R.layout.item_minecraft_account, accountArray);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:267:        accountAdapter.setDropDownViewResource(R.layout.item_minecraft_account);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:268:        setAdapter(accountAdapter);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:270:        // Pick what's available, might just be the the add account "button"
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:271:        pickAccount(overridePosition == 0 ? -1 : overridePosition);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:272:        if(mSelectecAccount != null)
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:273:            performLogin(mSelectecAccount);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:276:        setNoAccountBehavior();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:280:    private void performLogin(MinecraftAccount minecraftAccount){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:282:        if(!Tools.isOnline(getContext())){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:285:        if(minecraftAccount.isLocal()) return;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:287:        mLoginBarPaint.setColor(getResources().getColor(R.color.minebutton_color));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:288:        if(minecraftAccount.isMicrosoft){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:289:            if(System.currentTimeMillis() > minecraftAccount.expiresAt){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:290:                // Perform login only if needed
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:291:                new MicrosoftBackgroundLogin(true, minecraftAccount.msaRefreshToken)
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:292:                        .performLogin(mProgressListener, mDoneListener, mErrorListener);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:298:    /** Pick the selected account, the one in settings if 0 is passed */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:299:    private void pickAccount(int position){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:300:        MinecraftAccount selectedAccount;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:302:            PojavProfile.setCurrentProfile(getContext(), mAccountList.get(position));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:303:            selectedAccount = PojavProfile.getCurrentProfileContent(getContext(), mAccountList.get(position));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:306:            // Account file corrupted due to previous versions having improper encoding
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:307:            if (selectedAccount == null){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:312:                        .setTitle(R.string.account_corrupted)
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:313:                        .setMessage(R.string.login_again)
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:314:                        .setPositiveButton(R.string.delete_account_and_login, (dialog, which) -> {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:315:                            removeCurrentAccount();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:316:                            pickAccount(-1);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:325:            // Get the current profile, or the first available profile if the wanted one is unavailable
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:326:            selectedAccount = PojavProfile.getCurrentProfileContent(getContext(), null);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:327:            int spinnerPosition = selectedAccount == null
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:328:                    ? mAccountList.size() <= 1 ? 0 : 1
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:329:                    : mAccountList.indexOf(selectedAccount.username);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:333:        mSelectecAccount = selectedAccount;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:334:        setImageFromSelectedAccount();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:338:    /* Legacy behavior, update the head image manually for the selected account */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:339:    private void setImageFromSelectedAccount(){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:342:        if(mSelectecAccount != null){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:345:                ExtendedTextView view = layout.findViewById(R.id.account_item);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:346:                Bitmap bitmap = mSelectecAccount.getSkinFace();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:362:    private class AccountAdapter extends ArrayAdapter<String> {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:365:        public AccountAdapter(@NonNull Context context, int resource, @NonNull String[] objects) {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:372:                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_minecraft_account, parent, false);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:375:            ExtendedTextView textview = convertView.findViewById(R.id.account_item);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:376:            ImageView deleteButton = convertView.findViewById(R.id.delete_account_button);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:379:            // Handle the "Add account section"
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:386:                Drawable accountHead = mImageCache.get(username);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:387:                if (accountHead == null){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:388:                    accountHead = new BitmapDrawable(parent.getResources(), MinecraftAccount.getSkinFace(username));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:389:                    mImageCache.put(username, accountHead);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:391:                textview.setCompoundDrawables(accountHead, null, null, null);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:407:            view.findViewById(R.id.delete_account_button).setVisibility(View.GONE);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:413:                    .setMessage(R.string.warning_remove_account)
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcAccountSpinner.java:417:                        removeAccount(position);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:4:import static net.kdt.pojavlaunch.fragments.ProfileEditorFragment.DELETED_PROFILE;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:28:import net.kdt.pojavlaunch.fragments.ProfileEditorFragment;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:29:import net.kdt.pojavlaunch.fragments.ProfileTypeSelectFragment;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:31:import net.kdt.pojavlaunch.profiles.ProfileAdapter;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:32:import net.kdt.pojavlaunch.profiles.ProfileAdapterExtra;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:41:    private static final int VERSION_SPINNER_PROFILE_CREATE = 0;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:61:    private final ProfileAdapter mProfileAdapter = new ProfileAdapter(new ProfileAdapterExtra[]{
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:62:            new ProfileAdapterExtra(VERSION_SPINNER_PROFILE_CREATE,
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:63:                    R.string.create_profile,
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:69:    public void setProfileSelection(int position){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:72:                .putString(LauncherPreferences.PREF_KEY_CURRENT_PROFILE,
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:73:                        mProfileAdapter.getItem(position).toString())
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:79:        mProfileAdapter.setView(this, mProfileAdapter.getItem(position), false);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:83:    public void openProfileEditor(FragmentActivity fragmentActivity) {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:84:        Object currentSelection = mProfileAdapter.getItem(mSelectedIndex);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:85:        if(currentSelection instanceof ProfileAdapterExtra) {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:86:            performExtraAction((ProfileAdapterExtra) currentSelection);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:88:            Tools.swapFragment(fragmentActivity, ProfileEditorFragment.class, ProfileEditorFragment.TAG, null);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:92:    /** Reload profiles from the file, forcing the spinner to consider the new data */
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:93:    public void reloadProfiles(){
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:94:        mProfileAdapter.reloadProfiles();
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:107:        int profileIndex;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:110:            profileIndex = extra_value.equals(DELETED_PROFILE) ? 0
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:111:                    : getProfileAdapter().resolveProfileIndex(extra_value);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:113:            profileIndex = mProfileAdapter.resolveProfileIndex(
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:114:                    LauncherPreferences.DEFAULT_PREF.getString(LauncherPreferences.PREF_KEY_CURRENT_PROFILE,""));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:116:        setProfileSelection(Math.max(0,profileIndex));
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:136:    private void performExtraAction(ProfileAdapterExtra extra) {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:138:        if (extra.id == VERSION_SPINNER_PROFILE_CREATE) {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:139:            Tools.swapFragment((FragmentActivity) getContext(), ProfileTypeSelectFragment.class,
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:140:                    ProfileTypeSelectFragment.TAG, null);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:149:        mListView.setAdapter(mProfileAdapter);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:151:            Object item = mProfileAdapter.getItem(position);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:154:                setProfileSelection(position);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:155:            }else if(item instanceof ProfileAdapterExtra) {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:157:                performExtraAction((ProfileAdapterExtra) item);
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:198:    public ProfileAdapter getProfileAdapter() {
+app_pojavlauncher/src/main/java/com/kdt/mcgui/mcVersionSpinner.java:199:        return mProfileAdapter;
+app_pojavlauncher/src/main/java/com/kdt/mcgui/ProgressLayout.java:37:    public static final String AUTHENTICATE_MICROSOFT = "authenticate_microsoft";
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceBLESteamController.java:15:import android.bluetooth.BluetoothProfile;
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceBLESteamController.java:255:            return BluetoothProfile.STATE_DISCONNECTED;
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceBLESteamController.java:262:            return BluetoothProfile.STATE_DISCONNECTED;
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceBLESteamController.java:265:        return btManager.getConnectionState(mDevice, BluetoothProfile.GATT);
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceBLESteamController.java:270:        if (getConnectionState() != BluetoothProfile.STATE_CONNECTED) {
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceBLESteamController.java:287:            case BluetoothProfile.STATE_CONNECTED:
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceBLESteamController.java:316:            case BluetoothProfile.STATE_DISCONNECTED:
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceBLESteamController.java:324:            case BluetoothProfile.STATE_CONNECTING:
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceUSB.java:12:import java.util.Locale;
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceUSB.java:42:        return String.format(Locale.ENGLISH, "%s/%x/%x/%d", mDevice.getDeviceName(), mDevice.getVendorId(), mDevice.getProductId(), mInterfaceIndex);
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceManager.java:14:import android.bluetooth.BluetoothProfile;
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceManager.java:19:import android.content.DialogInterface;
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceManager.java:228:        if (isXbox360Controller(usbDevice, usbInterface) || isXboxOneController(usbDevice, usbInterface)) {
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceManager.java:234:    private boolean isXbox360Controller(UsbDevice usbDevice, UsbInterface usbInterface) {
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceManager.java:241:            0x045e, // Microsoft
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceManager.java:283:    private boolean isXboxOneController(UsbDevice usbDevice, UsbInterface usbInterface) {
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceManager.java:289:            0x045e, // Microsoft
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceManager.java:359:                    // This happens with the Xbox Series X controller which has a duplicate interface 0, which is inactive
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceManager.java:461:        List<BluetoothDevice> currentConnected = mBluetoothManager.getConnectedDevices(BluetoothProfile.GATT);
+app_pojavlauncher/src/main/java/org/libsdl/app/HIDDeviceManager.java:533:        // If the device has no local name, we really don't want to try an equality check against it.
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:20:import android.content.DialogInterface;
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:35:import android.os.LocaleList;
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:66:import java.util.Locale;
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:213:    protected static Locale mCurrentLocale;
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:358:        // RTLD_GLOBAL, all the dependencies of the main executable remain RTLD_LOCAL." - dimitry
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:487://                new DialogInterface.OnClickListener() {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:489://                    public void onClick(DialogInterface dialog,int id) {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:545://                mCurrentLocale = getContext().getResources().getConfiguration().locale;
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:547://                mCurrentLocale = getContext().getResources().getConfiguration().getLocales().get(0);
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:747:        if (mCurrentLocale == null || !mCurrentLocale.equals(newConfig.locale)) {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:748:            mCurrentLocale = newConfig.locale;
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:749:            SDLActivity.onNativeLocaleChanged();
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:1172:    public static native void onNativeLocaleChanged();
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:1750:        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:1752:            public void onDismiss(DialogInterface unused) {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:1836:            public boolean onKey(DialogInterface d, int keyCode, KeyEvent event) {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2203:    public static String getPreferredLocales() {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2206:            LocaleList locales = LocaleList.getAdjustedDefault();
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2207:            for (int i = 0; i < locales.size(); i++) {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2209:                result += formatLocale(locales.get(i));
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2211:        } else if (mCurrentLocale != null) {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2212:            result = formatLocale(mCurrentLocale);
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2217:    public static String formatLocale(Locale locale) {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2220:        if (locale.getLanguage() == "in") {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2223:        } else if (locale.getLanguage() == "") {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2227:            lang = locale.getLanguage();
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2230:        if (locale.getCountry() == "") {
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLActivity.java:2233:            result = lang + "_" + locale.getCountry();
+app_pojavlauncher/src/main/java/org/libsdl/app/SDL.java:57:            // some projects that have huge numbers of local libraries bundled, and thus may
+app_pojavlauncher/src/main/java/org/libsdl/app/SDLControllerManager.java:202:            // for Xbox-ish game pads that have the right stick on RX/RY and the
