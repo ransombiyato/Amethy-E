@@ -48,6 +48,24 @@ jobs:
           ./scripts/languagelist_updater.sh
           mkdir out
 
+      - name: Inspect gamepad remapper
+        run: |
+          gradle :app_pojavlauncher:dependencies --configuration debugRuntimeClasspath
+
+          echo "=== Gamepad-related files ==="
+          find ~/.gradle -type f 2>/dev/null | grep -Ei 'gamepad|boulay' || true
+
+          echo "=== AARs containing gamepad resources ==="
+          find ~/.gradle -type f -name "*.aar" -print0 2>/dev/null |
+          while IFS= read -r -d '' aar; do
+            if unzip -l "$aar" 2>/dev/null |
+              grep -Eq 'button_a|button_b|button_x|button_start|button_select|dpad_|shoulder_|stick_|trigger_'; then
+              echo "FOUND: $aar"
+              unzip -l "$aar" |
+                grep -E 'button_a|button_b|button_x|button_start|button_select|dpad_|shoulder_|stick_|trigger_'
+            fi
+          done
+
       - name: Build Debug APK
         run: |
           gradle :app_pojavlauncher:assembleDebug
