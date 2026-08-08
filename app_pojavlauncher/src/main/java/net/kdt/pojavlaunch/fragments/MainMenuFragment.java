@@ -62,13 +62,13 @@ public class MainMenuFragment extends Fragment {
         mNewsButton.setOnClickListener(v -> Tools.openURL(requireActivity(), Tools.URL_HOME));
         mDiscordButton.setOnClickListener(v -> Tools.openURL(requireActivity(), getString(R.string.discord_invite)));
         mCustomControlButton.setOnClickListener(v -> startActivity(new Intent(requireContext(), CustomControlsActivity.class)));
-        if (hasOnlineProfile()) {
+        if (true) {
             mInstallJarButton.setOnClickListener(v -> runInstallerWithConfirmation(false));
             mInstallJarButton.setOnLongClickListener(v -> {
                 runInstallerWithConfirmation(true);
                 return true;
             });
-        } else mInstallJarButton.setOnClickListener(v -> hasNoOnlineProfileDialog(requireActivity()));
+        }
         mEditProfileButton.setOnClickListener(v -> mVersionSpinner.openProfileEditor(requireActivity()));
 
         mPlayButton.setOnClickListener(v -> {
@@ -88,11 +88,9 @@ public class MainMenuFragment extends Fragment {
         mShareLogsButton.setOnClickListener((v) -> shareLog(requireContext()));
 
         mOpenDirectoryButton.setOnClickListener((v)-> {
-            if (Tools.isDemoProfile(v.getContext())){ // Say a different message when on demo profile since they might see the hidden demo folder
-                hasNoOnlineProfileDialog(getActivity(), getString(R.string.demo_unsupported), getString(R.string.change_account));
-            } else if (!hasOnlineProfile()) { // Otherwise display the generic pop-up to log in
-                hasNoOnlineProfileDialog(requireActivity());
-            } else openPath(v.getContext(), getCurrentProfileDirectory(), false);
+        mOpenDirectoryButton.setOnClickListener((v)-> {
+            openPath(v.getContext(), getCurrentProfileDirectory(), false);
+        });
 
         });
 
